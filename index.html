@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="css/main.css" rel="stylesheet" />
+  <script defer src="js/main.js"></script>
+  <title>HAMMER</title>
+</head>
+<body>
+<div class="popups" id="popupsContainer" style="visibility: hidden;" onclick="popupToggle()">
+  <div class="popup-timetable" id="popup" onclick="event.stopPropagation()">
+    <h2 class="popup-timetable__title">ПОСМОТРЕТЬ РАСПИСАНИЕ</h2>
+    <a class="popup-timetable__button button button--border" href="#">Боевые искусства</a>
+    <a class="popup-timetable__button button button--border" href="#">Танцы и фитнес направления</a>
+    <button class="popups__button" type="button" name="close" onclick="popupToggle()">></button>
+  </div>
+</div>
+<div class="container">
+  <header class="menu">
+    <a class="menu__logo" href="/"><img src="./img/logo.png" alt="HAMMER"></a>
+      <ul class="menu__list">
+        <li class="menu__item"><a href="#benefits">Почему мы?</a></li>
+        <li class="menu__item menu__item--active"><a href="#services">Услуги и тарифы</a></li>
+        <li class="menu__item"><a href="#timetable">Расписание</a></li>
+        <li class="menu__item"><a href="#command">Наша команда</a></li>
+        <li class="menu__item"><a href="#contacts">Контакты</a></li>
+      </ul>
+    <p class="menu__phone"><a href="tel: +79297005323">8 (929) 700-53-23</a></p>
+  </header>
+  <section class="promo">
+    <div class="promo__info-block">
+      <h1 class="hidden">HAMMER</h1>
+      <img class="promo__title" src="./img/HAMMER.svg" alt="HAMMER">
+      <p class="promo__tagline">ТРЕНАЖЕРНЫЙ ЗАЛ У ДОМА</p>
+      <p class="promo__text">ПРИ ПОКУПКЕ ПАКЕТА ПЕРСОНАЛЬНЫХ ТРЕНИРОВОК, АБОНЕМЕНТ В ТРЕНАЖЕРНЫЙ ЗАЛ В ПОДАРОК!</p>
+      <a class="button" href="https://t.me/Hammer_admin_revol">Вопросы сюда</a>
+      <ul class="promo__services">
+        <li class="promo__service">Солярий</li>
+        <li class="promo__service">Криосауна</li>
+        <li class="promo__service">Хамам</li>
+      </ul>
+    </div>
+    <div class="promo__image-block">
+      <img class="promo__image" src="./img/модель+обводка.png" alt="Модель">
+    </div>
+  </section>
+  <section class="about" id="benefits">
+    <h2 class="about__title">КТО МЫ И ПОЧЕМУ НАС ЛЮБЯТ!</h2>
+    <p class="about__text">
+      Hammer – молодой, энергичный, динамично развивающийся спортивный клуб.
+      <br>Наша цель – популяризация здорового и спортивного образа жизни.
+      <br>Мы смотрим в будущее, стараемся отслеживать эффективные и перспективные методики, тренажёры, спортивное питание и предлагаем нашим
+      клиентам самое эффективное и проверенное на себе.
+      <br>В нашем клубе максимально удобные условия пребывания и уютная обстановка. Мы стараемся обеспечить всё необходимое для достижения
+      поставленных целей наших клиентов. Мы знаем, как добиться результатов и поможем Вам.
+    </p>
+    <ul class="about__benefits">
+      <li class="about__benefit">Доступные цены</li>
+      <li class="about__benefit">Сильнейший тренерский состав</li>
+      <li class="about__benefit">Залы в шаговой доступности</li>
+      <li class="about__benefit">Сауна</li>
+      <li class="about__benefit">Массаж</li>
+      <li class="about__benefit">Криосауна</li>
+    </ul>
+  </section>
+  <section class="services" id="services">
+    <h2 class="services__title">УСЛУГИ И ТАРИФЫ</h2>
+    <button class="services__button" type="button" name="carousel-back" onclick="carousel('back')"><span class="hidden">Назад</span></button>
+    <ul class="services__list" id="carousel">
+      <li class="services__item" style="visibility: hidden; position: absolute;">
+        <img class="services__image" src="./img/Аквазона.png" alt="">
+        <h3 class="services__name">АКВАЗОНА/МАССАЖ</h3>
+      </li>
+      <li class="services__item" style="visibility: visible;">
+        <img class="services__image" src="./img/Иконка Танцы.png" alt="">
+        <h3 class="services__name">ТАНЦЫ <br> И ФИТНЕС НАПРАВЛЕНИЯ</h3>
+      </li>
+      <li class="services__item" style="visibility: visible;">
+        <img class="services__image" src="./img/Иконка Боевые искусства.png" alt="">
+        <h3 class="services__name">БОЕВЫЕ ИСКУССТВА</h3>
+      </li>
+      <li class="services__item" style="visibility: visible;">
+        <img class="services__image" src="./img/Иконка Тренажерный зал.png" alt="">
+        <h3 class="services__name">ТРЕНАЖЕРНЫЙ ЗАЛ</h3>
+      </li>
+    </ul>
+    <button class="services__button services__button--rotate" type="button" name="carousel-next" onclick="carousel('next')"><span class="hidden">Вперёд</span></button>
+  </section>
+  <section class="timetable" id="timetable">
+    <h2 class="timetable__title">ПОСМОТРЕТЬ РАСПИСАНИЕ НА ГРУППОВЫЕ ЗАНЯТИЯ</h2>
+    <button class="button button--timetable" type="button" name="openPopup" onclick="popupToggle('popup-timetable')">Посмотреть расписание</button>
+  </section>
+  <section class="command" id="command">
+    <div class="command__info-block">
+      <h2 class="command__title">НАША КОМАНДА</h2>
+      <p class="command__text">
+        Клуб развился из маленького подвальчика, качалки «для своих», где готовились к соревнованиям фанаты железного спорта.
+        <br>С основания в 00-х поддерживали и развивали клуб Дмитрий Растренин и Денис Горлов. Увлечённые спортом и идеей сохранить домашнюю и дружелюбную атмосферу,
+        сделать не просто помещение с тренажерами, а реализовать идеи тренеров и спортсменов о комфортной и удобной среде. Клубе, где люди улыбаются и жмут руки,
+        поддерживают и мотивируют друг друга.
+      </p>
+      <a class="button button--command" href="#">Посмотреть нашу команду</a>
+    </div>
+    <div class="command__image-block">
+      <img class="command__image" src="./img/тренера.png" alt="Команда">
+    </div>
+  </section>
+</div>
+<footer>
+  <footer class="contacts" id="contacts">
+    <ul class="contacts__list">
+      <li class="contacts__item">
+          Вопросы, отзывы и предложения
+          <br><a href="tel: +79276058036">8 (927) 605-80-36</a>
+          <br><a href="tel: +79276058036">8 (929) 700-53-23</a>
+          <br><a href="mailto: info@hammer63.ru">info@hammer63.ru</a>
+      </li>
+      <li class="contacts__item">
+          ул. Революционная, д. 126
+          <br><a href="tel: +78462485535">8 (846) 248-55-35</a>
+          <br><a href="tel: +79608081827">8 (960) 808-18-27</a>
+      </li>
+      <li class="contacts__item">
+          ул. Советской Армии, д. 107А
+          <br><a href="tel: +79276928848">8 (927) 692-88-48</a>
+      </li>
+      <li class="contacts__item">
+          пр-т Кирова 104
+          <br><a href="tel: +79297005323">8 (929) 700-53-23</a>
+      </li>
+    </ul>
+    <ul class="contacts__socials">
+      <li class="contacts__social"><a href="https://www.instagram.com/hammer63ru/"><img src="./img/instagram.png" alt="Instagram"></a></li>
+      <li class="contacts__social"><a href="https://vk.com/hammersamara"><img src="./img/vk.png" alt="Вконтакте"></a></li>
+      <li class="contacts__social"><a href="https://t.me/Hammer_admin_revol"><img src="./img/telegram.png" alt="Telegram"></a></li>
+    </ul>
+  </footer>
+</footer>
+</body>
+</html>
